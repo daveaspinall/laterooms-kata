@@ -1,7 +1,18 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import rootReducer from './reducers'
 
 import App from './components/App'
+import initialState from './reducers/initialState'
+
+const store = createStore(
+  rootReducer,
+  initialState,
+  // eslint-disable-next-line
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 const hotels = [
   {
@@ -21,4 +32,9 @@ const hotels = [
   },
 ]
 
-render(<App hotels={hotels} />, document.getElementById('root'))
+render(
+  <Provider store={store}>
+    <App hotels={hotels} />
+  </Provider>,
+  document.getElementById('root')
+)
