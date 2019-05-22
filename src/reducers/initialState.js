@@ -20,7 +20,7 @@ const initialState = {
         facilities: [],
       },
     },
-    visible: ['hotel1', 'hotel2', 'hotel3'],
+    visibleById: ['hotel1', 'hotel2', 'hotel3'],
   },
   filters: {
     facilities: [],

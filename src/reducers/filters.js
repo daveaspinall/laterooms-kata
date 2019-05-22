@@ -1,4 +1,4 @@
-const filters = (state = [], action) => {
+const filters = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_FACILITY_FILTER':
       return state
