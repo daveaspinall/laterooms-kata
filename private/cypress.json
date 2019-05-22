@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:5000",
+  "blacklistHosts": ["www.google-analytics.com", "in.hotjar.com"],
+  "pageLoadTimeout": 120000,
+  "video": false
+}
