@@ -1,24 +1,35 @@
 import * as actions from '../actions'
 import filtersReducer from './filters'
+import initialState from './initialState'
 
 describe('filtersReducer', () => {
   it('Should set a facility filter on the state', () => {
     const expectedState = {
-      filters: {
-        facilities: ['car park'],
-      },
+      facilities: ['car park'],
     }
 
-    let initialState = {
-      filters: {
-        facilities: [],
-      },
-    }
-
-    initialState = filtersReducer(
-      initialState,
+    const updatedState = filtersReducer(
+      initialState.filters,
       actions.setFacilityFilter('car park')
     )
-    expect(initialState).toEqual(expectedState)
+
+    expect(updatedState).toEqual(expectedState)
+  })
+
+  it("Should remove a facility filter if it's already set on the state", () => {
+    const expectedState = {
+      facilities: ['car park'],
+    }
+
+    const mockState = {
+      facilities: ['car park', 'gym'],
+    }
+
+    const updatedState = filtersReducer(
+      mockState,
+      actions.setFacilityFilter('gym')
+    )
+
+    expect(updatedState).toEqual(expectedState)
   })
 })

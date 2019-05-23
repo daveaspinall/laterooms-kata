@@ -3,7 +3,7 @@ import HotelGrid from '../../organisms/HotelGrid'
 
 const getVisibleHotels = hotels => {
   // filter hotels where visible flag === true
-  console.log(hotels, 'state.hotels')
+  // console.log(hotels, 'state.hotels')
   return hotels
 }
 

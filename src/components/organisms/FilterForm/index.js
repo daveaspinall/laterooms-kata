@@ -5,8 +5,18 @@ import FacilityFilter from '../../containers/FacilityFilter'
 
 const FilterForm = ({ className, ...props }) => (
   <form {...props}>
-    <FacilityFilter label="Car Park" name="facilities" value="car park" />
-    <FacilityFilter label="Pool" name="facilities" value="pool" />
+    <FacilityFilter
+      id="car-park-filter"
+      label="Car Park"
+      name="facilities"
+      value="car park"
+    />
+    <FacilityFilter
+      id="pool-filter"
+      label="Pool"
+      name="facilities"
+      value="pool"
+    />
   </form>
 )
 
