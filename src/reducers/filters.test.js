@@ -2,7 +2,7 @@ import * as actions from '../actions'
 import filtersReducer from './filters'
 
 describe('filtersReducer', () => {
-  it('Should add a facility filter to the state', () => {
+  it('Should set a facility filter on the state', () => {
     const expectedState = {
       filters: {
         facilities: ['car park'],
@@ -17,7 +17,7 @@ describe('filtersReducer', () => {
 
     initialState = filtersReducer(
       initialState,
-      actions.addFacilityFilterAction('car park')
+      actions.setFacilityFilter('car park')
     )
     expect(initialState).toEqual(expectedState)
   })
