@@ -17,6 +17,7 @@ const FilterForm = ({ className, ...props }) => (
       name="facilities"
       value="pool"
     />
+    <FacilityFilter id="gym-filter" label="Gym" name="facilities" value="gym" />
   </form>
 )
 

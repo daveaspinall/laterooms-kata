@@ -1,6 +1,11 @@
 import * as types from './actionTypes'
 
-export const setFacilityFilter = filter => ({
-  type: types.SET_FACILITY_FILTER,
+export const addFacilityFilter = filter => ({
+  type: types.ADD_FACILITY_FILTER,
+  filter,
+})
+
+export const removeFacilityFilter = filter => ({
+  type: types.REMOVE_FACILITY_FILTER,
   filter,
 })

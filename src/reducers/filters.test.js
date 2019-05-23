@@ -10,7 +10,7 @@ describe('filtersReducer', () => {
 
     const updatedState = filtersReducer(
       initialState.filters,
-      actions.setFacilityFilter('car park')
+      actions.addFacilityFilter('car park')
     )
 
     expect(updatedState).toEqual(expectedState)
@@ -27,7 +27,7 @@ describe('filtersReducer', () => {
 
     const updatedState = filtersReducer(
       mockState,
-      actions.setFacilityFilter('gym')
+      actions.removeFacilityFilter('gym')
     )
 
     expect(updatedState).toEqual(expectedState)
