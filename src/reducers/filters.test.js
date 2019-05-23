@@ -1,4 +1,4 @@
-import * as actions from '../actions/filterActions'
+import * as actions from '../actions'
 import filtersReducer from './filters'
 
 describe('filtersReducer', () => {

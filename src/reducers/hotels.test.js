@@ -1,29 +1,52 @@
-import * as actions from '../actions/hotelActions'
+import * as actions from '../actions'
 import hotelsReducer from './filters'
 
-import mockState from './initialState'
-
 describe('hotelsReducer', () => {
-  it('Should update the visible hotels when a filter is added', () => {
+  it('Should update the visible property on hotels when a filter is added', () => {
     const expectedState = {
-      ...mockState,
-      hotels: {
-        ...mockState.hotels.entities,
-        visibleById: ['hotel1', 'hotel2'],
-      },
+      hotels: [
+        {
+          name: 'hotelone',
+          starRating: 5,
+          facilities: ['car park', 'pool'],
+        },
+        {
+          name: 'hoteltwo',
+          starRating: 3,
+          facilities: ['car park', 'gym'],
+        },
+        {
+          name: 'hotelthree',
+          starRating: 3,
+          facilities: [],
+          visible: false,
+        },
+      ],
     }
 
     let initialState = {
-      ...mockState,
-      hotels: {
-        ...mockState.hotels.entities,
-        visibleById: ['hotel1', 'hotel2', 'hotel3'],
-      },
+      hotels: [
+        {
+          name: 'hotelone',
+          starRating: 5,
+          facilities: ['car park', 'pool'],
+        },
+        {
+          name: 'hoteltwo',
+          starRating: 3,
+          facilities: ['car park', 'gym'],
+        },
+        {
+          name: 'hotelthree',
+          starRating: 3,
+          facilities: [],
+        },
+      ],
     }
 
     initialState = hotelsReducer(
       initialState,
-      actions.updateVisibleHotelsAction()
+      actions.addFacilityFilterAction('car park')
     )
     expect(initialState).toEqual(expectedState)
   })

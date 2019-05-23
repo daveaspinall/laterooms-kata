@@ -1,4 +1,4 @@
-const hotels = (state = {}, action) => {
+const hotels = (state = [], action) => {
   switch (action.type) {
     case 'ADD_FACILITY_FILTER':
       return state

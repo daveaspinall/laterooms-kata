@@ -1,18 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import Hotel from './molecules/Hotel'
+import FilteredHotelGrid from './containers/FilteredHotelGrid'
 
-const App = ({ hotels, ...props }) => (
-  <div {...props}>
-    {hotels.map(hotel => (
-      <Hotel key={hotel.name} {...hotel} />
-    ))}
-  </div>
+const App = () => (
+  <React.Fragment>
+    <FilteredHotelGrid />
+  </React.Fragment>
 )
-
-App.propTypes = {
-  hotels: PropTypes.arrayOf(PropTypes.object).isRequired,
-}
 
 export default App
