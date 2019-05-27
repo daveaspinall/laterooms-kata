@@ -71,7 +71,7 @@ As I was building the app I thought of a few improvements that would improve the
 - Add icons and a hotel count next to each facility filter.
 - Strip out `data-test` attributes for production using [a babel plugin](https://www.npmjs.com/package/babel-plugin-jsx-remove-data-test-id).
 - Add [react-axe](https://github.com/dequelabs/react-axe) to watch for a11y issues, and set up pa11y to audit the built app.
-- Lazy load the images to reduce the initial
+- Lazy load the images to reduce the initial page load time and payload.
 - Optimise the production webpack build to reduce the bundle size.
 - Render the app server-side to improve render times and to allow users without JS to see the app.
 
