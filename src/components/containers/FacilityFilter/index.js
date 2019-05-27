@@ -15,7 +15,10 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 
   return {
     ...ownProps,
-    onChange: () => dispatch(toggle(value)),
+    onChange: e => {
+      e.stopPropagation()
+      return dispatch(toggle(value))
+    },
   }
 }
 
