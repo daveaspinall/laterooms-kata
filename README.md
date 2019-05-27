@@ -13,7 +13,7 @@
 
 ![alt text](/images/tdd-with-acceptance-tests.jpg 'TDD using Acceptance Tests, taken from Growing Object-Oriented Software Guided by Tests')
 
-All features were started initially with a failing acceptance test, and each feature was started with a failing unit test. Once each feature passes, I know I can then refactor safely and move onto the next feature. I tried to make each test pass using "the simplest thing that works", and then refactored the code later.
+Further to the image, each feature was driven with an outer failing acceptance test. I then followed the usual TDD cycle and wrote failing unit tests at the componentand reducer level. Once each feature passes I know I can then refactor safely and move onto the next feature. I tried to make each test pass using "the simplest thing that works", and then refactored the code later.
 
 #### Atomic Design
 
@@ -68,6 +68,7 @@ You can leave Cypress open while you're writing tests and they will automaticall
 
 As I was building the app I thought of a few improvements that would improve the usability of the app and the quality of the production code:
 
+- Add IE11 support
 - Add icons and a hotel count next to each facility filter.
 - Strip out `data-test` attributes for production using [a babel plugin](https://www.npmjs.com/package/babel-plugin-jsx-remove-data-test-id).
 - Add [react-axe](https://github.com/dequelabs/react-axe) to watch for a11y issues, and set up pa11y to audit the built app.
