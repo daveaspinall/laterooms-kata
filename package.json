@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest ./src",
+    "prestart": "npm run build",
     "start": "node .",
     "prebuild": "rimraf ./dist",
     "build": "webpack --mode production",
