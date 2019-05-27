@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Checkbox from '../../atoms/Checkbox'
+import { Label, StyledCheckbox } from './index.styled'
 
 const Filter = ({ id, label, ...props }) => (
-  <label htmlFor={id}>
-    <Checkbox id={id} {...props} />
-    {label}
-  </label>
+  <div {...props}>
+    <StyledCheckbox id={id} {...props} />
+    <Label htmlFor={id}>{label}</Label>
+  </div>
 )
 
 Filter.propTypes = {

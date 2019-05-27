@@ -1,22 +1,42 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import StarRating from '../../atoms/StarRating'
-import Facilities from '../../atoms/Facilities'
+import {
+  Card,
+  Link,
+  Media,
+  Image,
+  Details,
+  StyledHeading,
+  StyledStarRating,
+  StyledFacilities,
+} from './index.styled'
 
-const Hotel = ({ name, starRating, facilities, ...props }) => (
-  <div data-test="hotel-card" {...props}>
-    <h2>{name}</h2>
-    <StarRating rating={starRating} />
-    {facilities.length > 0 && <Facilities facilities={facilities} />}
-  </div>
-)
+const Hotel = ({ name, starRating, facilities, ...props }) => {
+  const hotelName = `hotel ${name.split('hotel')[1]}`
+
+  return (
+    <Card data-test="hotel-card" {...props}>
+      <Link to="/">
+        <Media>
+          <Image src="https://via.placeholder.com/600x350" />
+        </Media>
+        <Details>
+          <StyledHeading level={2}>{hotelName}</StyledHeading>
+          <StyledStarRating rating={starRating} />
+          {facilities.length > 0 && (
+            <StyledFacilities facilities={facilities} />
+          )}
+        </Details>
+      </Link>
+    </Card>
+  )
+}
 
 Hotel.propTypes = {
   name: PropTypes.string.isRequired,
   starRating: PropTypes.number.isRequired,
   facilities: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
-Hotel.displayName = 'Hotel'
 
 export default Hotel

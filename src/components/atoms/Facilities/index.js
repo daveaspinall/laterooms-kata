@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { List } from './index.styled'
+
 const Facilities = ({ facilities, ...props }) => (
-  <ul {...props}>
-    {facilities.map(facility => (
-      <li key={facility}>{facility}</li>
-    ))}
-  </ul>
+  <List {...props}>
+    {`Facilities: `}
+    {facilities.join(', ', facilities)}
+  </List>
 )
 
 Facilities.propTypes = {

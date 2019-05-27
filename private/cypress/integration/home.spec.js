@@ -10,12 +10,13 @@ describe('Home Page', () => {
   })
 
   it('Allows a user to filter hotels by a single facility', () => {
-    cy.get('input[name="facilities"]').check(['car park'])
+    cy.get('label[for="car-park-filter"]').click()
     cy.get('@hotels').should('have.length', 2)
   })
 
   it('Allows a user to filter hotels by multiple facilities', () => {
-    cy.get('input[name="facilities"]').check(['gym', 'car park'])
+    cy.get('label[for="car-park-filter"]').click()
+    cy.get('label[for="gym-filter"]').click()
     cy.get('@hotels').should('have.length', 1)
   })
 })

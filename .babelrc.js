@@ -1,5 +1,5 @@
 const presets = ['@babel/env', '@babel/react']
-const plugins = []
+const plugins = ['babel-plugin-styled-components']
 
 module.exports = {
   presets,

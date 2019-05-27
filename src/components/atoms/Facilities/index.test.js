@@ -9,8 +9,6 @@ const mockFacilities = ['foo', 'bar']
 describe('Facilities component', () => {
   it('Displays facilities when passed in', () => {
     const wrapper = wrap({ facilities: mockFacilities })
-
-    expect(wrapper.find('li')).toHaveLength(mockFacilities.length)
-    expect(wrapper.contains('foo')).toBe(true)
+    expect(wrapper.render().text()).toEqual('Facilities: foo, bar')
   })
 })

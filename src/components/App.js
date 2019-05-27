@@ -1,13 +1,18 @@
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
 
-import FilterForm from "./organisms/FilterForm"
-import FilteredHotelGrid from './containers/FilteredHotelGrid'
+import HotelPage from './pages/HotelPage'
+
+import theme from '../styles/settings/theme'
+import GlobalStyle from '../styles/generic/global'
 
 const App = () => (
-  <React.Fragment>
-    <FilterForm />
-    <FilteredHotelGrid />
-  </React.Fragment>
+  <ThemeProvider theme={theme}>
+    <React.Fragment>
+      <GlobalStyle />
+      <HotelPage />
+    </React.Fragment>
+  </ThemeProvider>
 )
 
 export default App
